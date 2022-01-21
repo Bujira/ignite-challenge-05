@@ -73,6 +73,10 @@ describe('Repositories', () => {
 
     const [RL, TLOU, NFSMW, NFSP] = await ormGamesRepository.save(gamesSeed);
 
+    // const isGamesRepositoryOk = await ormGamesRepository.find()
+
+    // console.log("CONSOLE X: ", isGamesRepositoryOk)
+
     const [vinicius, danilo, joseph, daniele] = usersSeed;
 
     vinicius.games = [RL, NFSMW, NFSP];
@@ -80,7 +84,13 @@ describe('Repositories', () => {
     joseph.games = [RL, NFSMW];
     daniele.games = [NFSMW, NFSP, TLOU];
 
+    // console.log("CONSOLE Y: ", usersSeed)
+
     await ormUsersRepository.save(usersSeed);
+
+    // const isUserRepositoryOk = await ormUsersRepository.find()
+
+    // console.log("CONSOLE Z: ", isUserRepositoryOk)
   });
 
   afterAll(async () => {
